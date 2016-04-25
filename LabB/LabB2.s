@@ -1,3 +1,4 @@
+		.globl fini
 		.text
 main:	#--------------------
 		#li		$t0, 60			# t0=60
@@ -9,4 +10,4 @@ main:	#--------------------
 		add		$a0, $0, $t2	# printInt
 		syscall					# do print
 		#--------------------
-		jr		$ra				# return
+fini:	jr		$ra				# return

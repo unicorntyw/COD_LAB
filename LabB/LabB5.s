@@ -1,7 +1,9 @@
+		.globl fini
 		.text
 main:	#--------------------
-		#li		$t0, 60			# t0=60
-		addi	$t0, $0, 60		# t0=60
+		addi	$v0, $0, 5		# service #5 v0=readInt
+		syscall
+		add		$t0, $0, $v0	#
 		addi	$t1, $0, 7		# t1=7
 		add		$t2, $t0, $t1	# t2=t0+t1
 		#--------------------
@@ -9,4 +11,4 @@ main:	#--------------------
 		add		$a0, $0, $t2	# printInt
 		syscall					# do print
 		#--------------------
-		jr		$ra				# return
+fini:	jr		$ra				# return
