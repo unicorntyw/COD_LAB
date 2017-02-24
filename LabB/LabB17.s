@@ -8,7 +8,9 @@ main:	#-------------------
 		ori		$t5, $t5, 0xfbff
 		li		$t6, 1024
 		nor		$t6, $t6, $0
-		and		$t0, $t0, $t6
+		lui		$t7, 0xffff
+		ori		$t7, $t7, 0xfbff
+		and		$t0, $t0, $t7
 		add		$a0, $0, $t0
 		addi	$v0, $0,  1		# service #1
 		syscall					# do print
